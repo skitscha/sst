@@ -20,6 +20,7 @@ export interface ConfigOptions {
   name: string;
   region?: string;
   stage?: string;
+  account?: string;
   profile?: string;
   role?: string;
   ssmPrefix?: string;
@@ -96,6 +97,7 @@ const CONFIG_EXTENSIONS = [
 
 interface GlobalOptions {
   profile?: string;
+  account?: string;
   role?: string;
   stage?: string;
   root?: string;
@@ -174,6 +176,7 @@ export async function initProject(globals: GlobalOptions) {
         process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY
           ? undefined
           : globals.profile || config.profile,
+      account: globals.account || config.account,
       region: globals.region || config.region,
       role: globals.role || config.role,
       ssmPrefix: config.ssmPrefix || `/sst/${config.name}/${stage}/`,

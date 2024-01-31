@@ -76,6 +76,7 @@ Here's the full list of config options that can be returned:
 - **`name`** The name of your application
 - **`stage`** The stage to use\*
 - **`region`** AWS region to use\*
+- **`profile`** AWS account to use\*
 - **`profile`** AWS profile to use\*
 - **`role`** AWS role to use\*
 - **`ssmPrefix`** SSM prefix for all SSM parameters that SST creates

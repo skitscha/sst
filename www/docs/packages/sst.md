@@ -523,6 +523,12 @@ npx sst telemetry enable
 
   The AWS profile you want to use for deployment. Defaults to the `default` profile in your AWS credentials file.
 
+- **`--account`**
+
+  _Default_: The `default` account with be the account in your AWS credentials file.
+
+  The AWS Account you want deploy to. Defaults to the `default` account in your AWS credentials file or the one specified in your `sst.json`.
+
 - **`--region`**
 
   _Default_: Stage set in the SST config.

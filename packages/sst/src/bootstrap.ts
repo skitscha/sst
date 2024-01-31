@@ -201,13 +201,14 @@ async function loadSSTStatus() {
 }
 
 export async function bootstrapSST(cdkBucket: string) {
-  const { region, bootstrap, cdk } = useProject().config;
+  const { account, region, bootstrap, cdk } = useProject().config;
 
   // Create bootstrap stack
   const app = new App();
   const stackName = bootstrap?.stackName || SST_STACK_NAME;
   const stack = new Stack(app, stackName, {
     env: {
+      account,
       region,
     },
     synthesizer: new DefaultStackSynthesizer({
